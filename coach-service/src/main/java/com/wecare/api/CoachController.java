@@ -1,5 +1,7 @@
 package com.wecare.api;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,5 +32,10 @@ public class CoachController {
 	@GetMapping("/coach/{id}")
 	public CoachResponse getCoach(@PathVariable int id) {
 		return service.getCoach(id);
+	}
+	
+	@GetMapping("/coach")
+	public List<CoachResponse> getAllCoach() {
+		return service.getAllCoach();
 	}
 }
