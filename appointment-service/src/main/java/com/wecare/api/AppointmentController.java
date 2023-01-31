@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wecare.request.AppoitmentRequest;
 import com.wecare.response.AppointmentResponse;
 import com.wecare.service.AppointmentService;
 
@@ -38,5 +39,10 @@ public class AppointmentController {
 	@DeleteMapping("/coach/{id}")
 	public void deleteAppointment(@PathVariable int id) {
 		service.deleteAppointment(id);
+	}
+	
+	@PostMapping("/addApp")
+	public void addAppointment(@RequestBody AppoitmentRequest request) {
+		service.addAppointment(request);
 	}
 }

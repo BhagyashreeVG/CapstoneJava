@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.wecare.entity.Appointment;
 import com.wecare.repository.AppointmentRepo;
-
+import com.wecare.request.AppoitmentRequest;
 import com.wecare.response.AppointmentResponse;
 
 @Service
@@ -65,6 +65,11 @@ public class AppointmentService {
 	
 	public void deleteAppointment(int userId) {
 		repo.deleteById(userId);
+	}
+
+	public void addAppointment(AppoitmentRequest request) {
+		Appointment app = new Appointment(request);
+		repo.save(app);	
 	}
 	
 //	public List<CoachResponse> getAllCoach() {

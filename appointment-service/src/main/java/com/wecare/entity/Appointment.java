@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.wecare.request.AppoitmentRequest;
+
 @Entity
 @Table(name="appointment")
 public class Appointment {
@@ -30,6 +32,12 @@ public class Appointment {
 		super();
 	}
 
+	public Appointment(AppoitmentRequest req) {
+		this.date = req.getDate();
+		this.slot = req.getSlot();
+		this.userId = req.getUserId();
+		this.coachId = req.getCoachId();
+	}
 	public int getId() {
 		return id;
 	}
