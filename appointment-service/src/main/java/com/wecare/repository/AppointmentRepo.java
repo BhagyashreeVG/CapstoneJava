@@ -22,7 +22,9 @@ public interface AppointmentRepo extends JpaRepository<Appointment, Integer>{
 	
    @Query(value = "From Appointment where user_id=:param") 
    List<Appointment> findByUserId(@Param("param")int userId); 
-	 	
+	 
+   @Query(value = "From Appointment where coach_id=:param") 
+   List<Appointment> findByCoachId(@Param("param")int userId); 
 	/*
 	 * @PersistenceContext
 	 * 

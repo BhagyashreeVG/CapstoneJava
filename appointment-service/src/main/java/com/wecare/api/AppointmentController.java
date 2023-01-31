@@ -30,6 +30,11 @@ public class AppointmentController {
 		return service.getAppointment(id);
 	}
 	
+	@GetMapping("/getcoach/{id}")
+	public List<AppointmentResponse> getACoach(@PathVariable int id) {
+		return service.getAppointmentForCoach(id);
+	}
+	
 	@DeleteMapping("/coach/{id}")
 	public void deleteAppointment(@PathVariable int id) {
 		service.deleteAppointment(id);
