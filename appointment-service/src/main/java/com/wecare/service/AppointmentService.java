@@ -49,6 +49,10 @@ public class AppointmentService {
 		 return appResponse;
 	}
 	
+	public void deleteAppointment(int userId) {
+		repo.deleteById(userId);
+	}
+	
 //	public List<CoachResponse> getAllCoach() {
 //		List<CoachResponse> coachResponseList = new ArrayList<CoachResponse>();
 //		List<Coach> coachList = new ArrayList<Coach>();
