@@ -49,6 +49,19 @@ public class AppointmentService {
 		 return appResponse;
 	}
 	
+	public void updateAppointment(AppoitmentRequest request) {
+		List<Appointment> appt = repo.findByUserId(request.getUserId());
+		Appointment app = new Appointment();
+		
+		Iterator itr = appt.iterator();
+		
+		while(itr.hasNext()) {
+			app = (Appointment)itr.next();
+		}
+		
+		repo.save(app);
+	}
+	
 	public List<AppointmentResponse> getAppointmentForCoach(int userId) {
 		System.out.println(repo.findByCoachId(userId));
 		List<Appointment> app = new ArrayList<Appointment>();
